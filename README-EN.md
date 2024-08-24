@@ -1,148 +1,280 @@
 <div align="center">
 
-# AI Auto Video(Audio) Translation
+<img src="https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/chenymeaavt1.png" title="chenymeaavt.png" width="80%" />
 
-[![Simplified Chinese badge](https://img.shields.io/badge/Simplified%20Chinese-Simplified%20Chinese-blue)](./README.md)
-[![English badge](https://img.shields.io/badge/English-English-blue)](./README-EN.md)
-[![Download](https://img.shields.io/github/downloads/Chenyme/Chenyme-AAVT/total.svg?style=flat-square)](https://github.com/Chenyme/Chenyme-AAVT/releases)
-![PyPI - Version](https://img.shields.io/pypi/v/AAVT)
+<br>
+<br>
 
-Chenyme-AAVT V0.8.3
-</div>
-
-Thank you very much for coming to my **Automatic Video Translation** project! This project aims to provide a simple and easy-to-use automatic video (audio) recognition and translation tool to help you quickly recognize video subtitles and generate subtitle files, and then merge the translated subtitles with the original video for quick video translation.
-
-> - **Note0: The subtitle translation misalignment issue will be gradually optimized. Due to postgraduate studies, the update speed may slow down, thank you for your understanding~~~**
-> - **Note1: It is recommended to use the Faster-whisper and Large models for the best sentence breaking and recognition experience!**
-> - **Note2: The new version has significant changes and many bugs, so updates are frequent recently, it is recommended to update!**
-> - **Note3: After this version stabilizes, updates will slow down, studies are important, if you have any questions, you can join the group to discuss!**
-
-#### This update really took a long time! Give a free star to encourage it~ Thank you! [AAVT Project Documentation](https://zwho5v3j233.feishu.cn/wiki/OGcrwinzhi88MkkvEMVcLkDgnzc?from=from_copylink)
-
-<table>
-  <tr>
-    <td><img src="https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/ecbde183-d4e5-413e-a584-d3762cd79d5d" /></td>
-    <td><img src="https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/b20ddf3c-34c7-460b-bf98-fe66d856c6be" /></td>
-  </tr>
-</table>
-
-
-#### [Test effect click to download](https://github.com/Chenyme/Chenyme-AAVT/blob/main/public/test_vedio.mp4?raw=true)
-
-## Project Highlights
-> * Supports **OpenAI API interface calls** and **Faster-Whisper local operation**.
-> * Supports **GPU acceleration**, **VAD assistance**.
-> * Supports various translation modes such as **ChatGPT**, **KIMI**, **DeepSeek**, **ChatGLM**, **locally deployed models**.
-> * Supports **adjusting various parameters** to meet customized needs.
-> * Supports recognition and translation of **multiple languages** and **multiple file formats**.
-> * Supports **one-click generation** of processed content.
-> * Supports **subtitle modification, fine-tuning, preview**.
-> * Supports direct **AI summary, Q&A** of content.
-> * Supports direct **video generation of graphic blog posts**.
-
-## How to Install
-
-#### 1. Install [Python](https://www.python.org/downloads/)
-
-- Please ensure that the Python version is greater than 3.8
-
-#### 2. Install [FFmpeg](https://www.ffmpeg.org/download.html)
-
-- The `Full` version in the [**Release**](https://github.com/Chenyme/Chenyme-AAVT/releases) already includes the FFmpeg library
-- Set the FFmpeg environment variable
-  - Use the `Win+R` shortcut to open the Run dialog box.
-  - Enter `rundll32 sysdm.cpl,EditEnvironmentVariables`.
-  - In User variables, find `Path`.
-  - Click New and enter the path to FFmpeg. Example: `D:\APP\ffmpeg\bin` (please adjust according to your actual path).
-
-#### 3. Run `install.bat`
-
-- Choose the corresponding version of `install.bat` and wait for all dependencies to be installed.
-- If running on CPU, select the CPU version, similarly for CUDA11.8, CUDA12.1.
-
-#### Or you can use Colab here
+[![中文](https://img.shields.io/badge/Chinese-中文-blue)](./README.md)
+[![Downloads](https://img.shields.io/github/downloads/Chenyme/Chenyme-AAVT/total.svg?style=flat-square&label=Downloads)](https://github.com/Chenyme/Chenyme-AAVT/releases)
+[![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue?logo=telegram)](https://t.me/+j8SNSwhS7xk1NTc9)
+[![Latest Release](https://img.shields.io/github/v/release/Chenyme/Chenyme-AAVT.svg?style=flat-square)](https://github.com/Chenyme/Chenyme-AAVT/releases)
+![PyPI - Version](https://img.shields.io/pypi/v/AAVT?logo=pypi)
+[![License](https://img.shields.io/github/license/Chenyme/Chenyme-AAVT.svg?style=flat-square)](https://github.com/Chenyme/Chenyme-AAVT/blob/main/LICENSE)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Kirie233/Chenyme-AAVT/blob/main/AAVT.ipynb)
 
-## TODO
+</div>
 
-### Recognition Related
-- [x] Replace with a faster Whisper project
-- [x] Support local model loading
-- [x] Support personal fine-tuning of Whisper models
-- [x] VAD assistance optimization
-- [x] Word-level sentence breaking optimization
+---
+
+> [!NOTE]
+> 🌟 **If this project helps you, please remember to give it a Star 🌟 for support!**
+>
+> 📝 **It is recommended to use the **Large** model for better experience.** 
+>
+> 📖 [**Installation Guide**](https://blog.chenyme.top/blog/aavt-install) | ❓ [**FAQ**](https://blog.chenyme.top/blog/aavt-qa) | 💬 [**Telegram Group**](https://t.me/+j8SNSwhS7xk1NTc9)
+
+<br>
+
+## Project Introduction
+**Chenyme-AAVT Automatic Video Translation Project** aims to provide a simple, efficient, and free automation process for media recognition and translation, helping you quickly complete tasks such as audio and video subtitle recognition, translation, and processing. Currently, the project not only helps you recognize and translate sound but also automates the generation of marketing blog content, and even performs separate subtitle translations. Future plans include adding more interesting tools based on existing basic functions, such as real-time recognition, lip-sync correction, voice cloning, timbre differentiation, and more. Stay tuned!
+
+Basic supported features, not all features:
+
+- 【[Audio Recognition](?tab=readme-ov-file#audio-recognition)】|【[Video Recognition](?tab=readme-ov-file#video-recognition)】|【[Blog Generation](?tab=readme-ov-file#blog-generation)】|【[Subtitle Translation](?tab=readme-ov-file#subtitle-translation)】|【[Voice Simulation](?tab=readme-ov-file#voice-simulation)】
+
+<br>
+
+![20240820210851.jpg](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/home.jpg)
+
+<br>
+
+## Project Highlights
+
+<details>
+  <summary><b>📃 TODO | Tasks</b></summary>
+<br>
+
+### Recognition
+- [x] Replaced with faster Whisper project
+- [x] Supports local model loading
+- [x] Supports personal fine-tuning of Whisper models
+- [x] VAD-assisted optimization
+- [x] Word-level sentence segmentation optimization
 - [x] More language recognition
 
-### Translation Related
+### Translation
 - [x] Translation optimization
 - [x] More language translations
 - [x] More translation models
 - [x] More translation engines
-- [x] Support local large language model translation
+- [x] Supports local large language model translation
 
-### Subtitle Related
+### Subtitles
 - [x] Personalized subtitles
 - [x] More subtitle formats
-- [x] Subtitle preview, real-time modification
+- [x] Subtitle preview, real-time editing
 - [ ] Automated subtitle text proofreading
 - [ ] Dual subtitles
 
 ### Other
-- [x] Video summary, listing key points
+- [x] AI Assistant
 - [x] Video preview
-- [x] AI assistant
-- [x] Video generation of blog posts*
+- [x] Blog generation from videos
 - [ ] Real-time voice translation
-- [ ] Video Chinese dubbing
+- [ ] Chinese voiceover for videos
+- [ ] Timbre differentiation
+- [ ] Voice cloning
+- [ ] Lip-sync correction
 
-#### Note: Features marked with `*` are still unstable and may have some bugs.
+</details>
+
+- Supports recognition and translation of **multiple languages**
+- Supports **localized, free deployment** of the entire process
+- Supports **one-click generation of blog content, marketing blog** from videos
+- Supports **automated translation**, **secondary subtitle editing**, **video preview**
+- Supports **GPU acceleration**, **VAD assistance**, **FFmpeg acceleration**
+- Supports using various large models like **ChatGPT**, **Claude**, **Gemini**, **DeepSeek** for translation engines
+
+<br>
+
+## Windows Deployment
+<details>
+  <summary><b>👉 Prerequisites: Python, FFmpeg, CUDA Instructions </b></summary>
+<br>
+  
+### Python | 📖 [Guide](https://blog.chenyme.top/blog/aavt-install#47a521d01156)
+  - 💡 Choose Python version > 3.8
+  - Go to the official Python website to download the installer
+  - Run the installation and make sure to check the ADD TO PATH option
+### FFMpeg | 📖 [Guide](https://blog.chenyme.top/blog/aavt-install#1897915fc461)
+  - 💡 If you are unsure how to install and compile, directly download the `Win` version from the project’s Release page, which comes with a pre-compiled FFmpeg
+  - Go to the official FFmpeg website to download the compiled Windows version
+  - Set FFmpeg as an environment variable
+### CUDA (Skip for CPU) | 📖 [Guide](https://blog.chenyme.top/blog/aavt-install#1faea2d7295f)
+  - 💡 Recommended versions are CUDA 11.8, 12.1, 12.4
+  - Go to the CUDA website to download the installer
+  - Install CUDA
+## &nbsp;
+</details>
+
+<br>
+
+> ‼️ Make sure the prerequisites are ready before proceeding to the following steps‼️ 
+> ### 1. Run Deployment Script
+>  - Go to the Release page to download the latest `Win` version (Win/Small)
+>  - Run `1_Install.bat` and wait for the script to check
+>  - After passing, follow the prompts to choose the version for installation
+> ### 2. Run the Project Web
+>  - Run `2_WebUI.bat`
+>  - Enter `chenymeaavt` to access the project (this is a protection feature of the new version, can be turned off)
+>
+> &nbsp;
+>
+> ℹ️ **The WebUI will automatically launch, if it doesn’t, manually enter `localhost:8501` in your browser**
+
+<br>
+
+## Mac OS Deployment
+<details>
+  <summary><b>👉 Prerequisites: Python, Brew Instructions </b></summary>
+<br>
+  
+### Python
+  - 💡 Choose Python version > 3.8
+  - Go to the Python website to download the PGK installer
+  - Run the installation and select the standard install on the page
+### Brew
+  - 💡 Use the following command for one-click installation of `brew`
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+## &nbsp;
+</details>
+<br>
+
+> ‼️ Make sure the prerequisites are ready before proceeding to the following steps‼️ 
+> ### 1. Install FFmpeg
+> ```
+> brew install FFMpeg
+> ```
+> ### 2. Install Project Dependencies
+> - Go to the Release page to download the latest `Mac` version (Mac/Small)
+> - cd to the project root directory
+> ```
+> pip3 install -r requirements.txt
+> ```
+> ### 3. Run the Project Web
+> ```
+> streamlit run Chenyme-AAVT.py
+> ```
+>  - Enter `chenymeaavt` to access the project (this is a protection feature of the new version, can be turned off)
+>
+> &nbsp;
+>
+> ℹ️ **The WebUI will automatically launch, if it doesn’t, manually enter `localhost:8501` in your browser**
+
+<br>
+
+
+
+
+## Docker Deployment
+> 💡 Currently, the latest project version is V0.9.0. The Docker method is for version V0.8.x.
+>
+> Thanks to @Eisaichen for providing this version
+
+For detailed usage, please refer to: 📖 [eisai/chenyme-aavt](https://hub.docker.com/r/eisai/chenyme-aavt)
+
+```shell
+docker pull eisai/chenyme-aavt
+```
+
+<br>
+
+## Other Deployment Methods
+
+### Google Colab Deployment
+> Thanks to @Kirie233 for providing this version
+
+For detailed usage instructions, please refer to: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Kirie233/Chenyme-AAVT/blob/main/AAVT.ipynb)
+
+<br>
+
+### Docker Deployment
+> 💡 The current latest project version is V0.9.0. This Docker method is for version V0.8.x,
+>
+> Thanks to @Eisaichen for providing this version
+
+```commandline
+docker pull eisai/chenyme-aavt
+```
+For detailed usage instructions, please refer to: 📖 [eisai/chenyme-aavt](https://hub.docker.com/r/eisai/chenyme-aavt)
+
+<br>
+
+### Linux Deployment
+
+> As my computer is currently left at school, I haven’t studied this yet. However, I believe solving FFmpeg and CUDA should work fine.
+
+<br>
+
+<br>
+
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Chenyme/Chenyme-AAVT&type=Timeline)](https://star-history.com/#Chenyme/Chenyme-AAVT&Timeline)
 
-## Project Interface Preview
+<br>
+<br>
 
-### Main Page
+### Homepage BOT
 
-![1716910190616](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/0bfebaf3-53c5-42ae-8031-b898dc27df6f)
+<br>
 
-### Settings
+![11](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/bot.png)
 
-![1716910203660](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/49b89451-1129-4073-b1b5-0094af65f53e)
+<br>
+
+### Some Settings
+
+<br>
+
+![12](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/setting.png)
+
+<br>
+
+### Audio Recognition
+
+<br>
+
+![13](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/audio.png)
+
+<br>
 
 ### Video Recognition
 
-#### Parameter Settings
+<br>
 
-![d967ac4074d0c8ecba07b95de533730](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/72bc0e88-2148-486c-ac46-4f87a55e946b)
+![14](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/video.png)
 
-#### Running Interface
+<br>
 
-![b861c5019833b770f98344f7a4c73a4](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/ced915ec-a07b-43d2-9cf9-f92910033cb9)
+### Blog Generation
 
-#### Video Generation
+<br>
 
-![1716650985701](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/04bdf745-7ece-4c8b-a97b-f779b632dbc3)
+![15](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/blog.png)
 
-#### Subtitle Fine-tuning
-
-![1716651009788](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/33a02ef5-7386-4f34-ba0b-8947f17b78e3)
-
-### Content Assistant
-
-#### Parameter Settings
-
-![461474f5d96b61b70bd239a9e3ddf8d](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/f22a11c2-3c58-4a92-ab4c-954e3710a254)
-
-#### Running Interface
-
-![14575fd5efbe138f364329626501b09](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/8a81ea44-95ae-488f-9412-014ff1c030e3)
+<br>
 
 ### Subtitle Translation
 
-![35bc5a96676c7f2b9d71042eb7c877f](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/635865b1-6ec1-41fd-858c-e1dcc87d684b)
+<br>
 
-### Video Blog
+![16](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/srt.png)
 
-![09f60b8099f8ce19b83f4da63b26817](https://github.com/Chenyme/Chenyme-AAVT/assets/118253778/bbfca353-53d4-4a19-994f-7beddbbf17
+<br>
+
+### Voice Simulation
+
+<br>
+
+![17](https://github.com/Chenyme/Chenyme-AAVT/blob/main/cache/public/picture/opentts.png)
+
+<br>
+
+## Acknowledgements
+
+I have greatly benefited from the AI era, and this project has largely been realized by standing on the shoulders of giants. Thanks to the open-source spirit, and thanks to the developers of OpenAI, Streamlit, FFmpeg, Faster-whisper, and more!
